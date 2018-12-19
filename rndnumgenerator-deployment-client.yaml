@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata: 
+  namespace: default
+  name: rndnumgenerator-client
+  
+spec:
+  replicas: 1
+  template:
+    metadata:  
+      labels:
+        app: rndnumgenerator-client 
+            
+    spec:
+      containers:
+      - name: backend
+        image: srik1309/rndnumgeneratorclient 
+        ports:
+        - containerPort: 50052 
+      restartPolicy: Always

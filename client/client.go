@@ -17,7 +17,7 @@ import (
 )
 
 const (
-	address          = "localhost:50052"
+	address          = "rndnumgenerator-server:50052"
 	defaultMaxNumber = 12345
 )
 
@@ -76,7 +76,7 @@ func postToRestService(randomnumber string) {
 	}
 
 	resp, err := http.Post("http://"+server+":9013/", "application/json", bytes.NewBuffer(bytesRepresentation))*/
-	resp, err := http.Post("http://appinventory-go", "application/json", bytes.NewBuffer(bytesRepresentation))
+	resp, err := http.Post("http://appinventory-go:9013", "application/json", bytes.NewBuffer(bytesRepresentation))
 	if err != nil {
 		log.Fatalln(err)
 	}
