@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.k8s.rndnumgenerator";
+option java_outer_classname = "RndNumGeneratorProto";
+
+package rndnumgenerator;
+
+// The greeting service definition.
+service RandomNumberGenerator {
+  // Sends a random number
+  rpc SendRandomNumber (RandomNumberRequest) returns (RandomNumberReply) {}
+}
+
+// The request message containing the max value.
+message RandomNumberRequest {
+  int32 maxNumber = 1;
+}
+
+// The response message containing the random number in string format
+message RandomNumberReply {
+  string message = 1;
+}
